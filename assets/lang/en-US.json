@@ -1,0 +1,175 @@
+{
+    "random": {
+        "text": "Ama benim adım elvan dalton"
+    },
+    "welcome": {
+        "name": "folovmi Technology",
+        "subtitle": "Connect to Life",
+        "welcome": "Welcome",
+        "text": "McClintock’s eye for detail certainly helped narrow the whereabouts of lorem ipsum’s origin, however, the “how and when” still remain something of a mystery, with competing theories and timelines."
+    },
+    "introduction": {
+        "emergencyAlert": {
+            "header": "Real Time Emergency Alert",
+            "1": "Smart Plug",
+            "2": "Smart Thermostat",
+            "3": "Temperature & Humidity Sensor",
+            "4": "Humidity Sensor",
+            "5": "Pır Sensor",
+            "6": "Lux Sensor"
+        },
+        "vitalHealth": {
+            "header": "Real Time Vital Health Tracer",
+            "1": "Pulse",
+            "2": "Body Temp",
+            "3": "Blood Pressure",
+            "4": "Spo2",
+            "5": "Ecg"
+        },
+        "smartDevices": {
+            "header": "Smart Devices Managenment",
+            "1": "Smart Thersmostat",
+            "2": "Smart Energy"
+        },
+        "securityTracker": {
+            "header": "Real Time Secruity Tracker",
+            "1": "GeoFence",
+            "2": "Fall Sown",
+            "3": "Sos Call",
+            "4": "Gas",
+            "5": "Smoke "
+        },
+        "processManagement": {
+            "header": "Process Management",
+            "1": "Health",
+            "2": "Calorie",
+            "3": "Advanced Reminder"
+        }
+    },
+    "signUp": {
+        "logIn": "Log in",
+        "signUp": "Sign Up",
+        "email": "Email Address",
+        "password": "Password",
+        "forgotPassword": "Forgot your password?",
+        "passwordReminder": "Password Reminder",
+        "yourPassword": "Your Password , Sent",
+        "checkMail": "Please check your email"
+    },
+    "register": {
+        "register": "Register",
+        "email": "Email",
+        "name": "Your Name",
+        "surname": "Your Surname",
+        "phone": "Mobile Phone",
+        "id": "ID/Pass Number",
+        "birth": "Date of birth",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "smoke": "Do you smoke?",
+        "diabetes_staff": "Diabetes staff",
+        "diabetes_family": "Diabetes in the family",
+        "hearth_attack": "Hearth attack",
+        "hypertension": "Hypertension",
+        "disease_cure": "Great disease cure",
+        "blind": "Blind"
+    },
+    "health_monitor": {
+        "smart_health_monitor": "Smart Health Monitor",
+        "health_monitor": "Health Monitor",
+        "product_code": "Product Code",
+        "product_name": "Product Name",
+        "serial_number": "Serial Number",
+        "gps": "GPS",
+        "health_over_limit_notice": "Health Over Limit Notice",
+        "low_battery_warning": "Low Battery Warning",
+        "sms_notification": "SMS Notification",
+        "email_notification": "Email Notification",
+        "application_notice": "Application Notice",
+        "ekg_respiratory": "EKG / Respiratory Rate",
+        "blood_pressure": "Blood Pressure",
+        "body_temperature": "Body Temperature",
+        "spO2": "SpO2",
+        "hearth_rate": "Hearth rate"
+    },
+    "ekg": {
+        "ekg": "Ekg",
+        "rr_max": "RR-Max",
+        "hrv": "HRV",
+        "mood": "Mood",
+        "duration": "Duration : "
+    },
+    "blood_pressure":{
+        "blood_pressure":"Blood Pressure",
+        "spo2":"SpO2",
+        "danger_hypoxemia":"Danger-Hypoxemia",
+        "low":"Low",
+        "normal":"Normal",
+        "pulse":"Pulse",
+        "optimal":"Optimal",
+        "pre_high":"Pre-High",
+        "high":"High",
+        "systolic":"Systolic",
+        "diastolic":"Diastolic",
+        "80":"80.0",
+        "89":"89.0",
+        "95":"95.0",
+        "danger":"Danger",
+        "hypoxemia": "Hypoxemia"
+
+    },
+    "body_temperature":{
+        "body_temperature":"Body Temperature",
+        "fever":"Fever",
+        "normal":"Normal",
+        "high_fever":"High Fever",
+        "37":"37.7",
+        "39":"39.4",
+        "otpimal":"Optimal",
+       "pre_high":"Pre-High",
+       "high":"High"
+    },
+    
+    "wifi":{
+        "wifi_hotspot":"Wifi Hotspot",
+        "select_wifi":"Select 2.4 Ghz Wi-Fi Network and enter Password",
+        "continue":"Continue",
+        "wifi":"Wi-Fi",
+        "connected":"Connected",
+        "available_networks":"Available Networks",
+        "refresh":"Refresh",
+        "next":"Next"
+    },
+    "smart_devices":"Smart Devices",
+
+    "device_reset":{
+        "device_reset":"Device Reset",
+        "open_close_button":"Please press button until light open/close.",
+        "light_open":"Is light constantly flashing?",
+        "next":"Next",
+        "back":"Back",
+        "add_device":"Add device",
+        "device_recognicion":"Please wait until the device recognition process is finished.",
+        "scan_devices":"Scan Devices",
+        "register_cloud":"Register on Cloud",
+        "initilaze_device":"Initilaze the device",
+        "add_device_unsc":"Adding device is unuccesful",
+        "not_respond":"Not respond from device",
+        "is_warning_lamp":"Is the warning lamp flashing?",
+        "is_wifi_connection":"Is your 2.4Ghz wifi connected?",
+        "is_your_password":"Is your wifi password correct?",
+        "again":"Again",
+        "add_device_success":"Adding device is successed.",
+        "added_device":"Added device",
+        "device_name":"Device Name",
+        "device_place":"Device Place",
+        "livingroom":"Living Room",
+        "bathroom":"Bathroom",
+        "kitchen":"Kitchen"
+        
+    }
+
+
+    
+}

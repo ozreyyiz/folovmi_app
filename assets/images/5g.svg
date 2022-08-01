@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" viewBox="0 0 25 20">
+  <g id="Group_734" data-name="Group 734" transform="translate(-244 -318)">
+    <text id="_5G" data-name="5G" transform="translate(247 334)" fill="#9c9c9c" font-size="15" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">5G</tspan></text>
+    <g id="Rectangle_363" data-name="Rectangle 363" transform="translate(244 320)" fill="none" stroke="#a0a0a0" stroke-width="0.5">
+      <rect width="25" height="17" rx="3" stroke="none"/>
+      <rect x="0.25" y="0.25" width="24.5" height="16.5" rx="2.75" fill="none"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.978" height="27.986" viewBox="0 0 27.978 27.986">
+  <g id="Group_518" data-name="Group 518" transform="translate(0.5 0.5)">
+    <g id="Group_518-2" data-name="Group 518">
+      <g id="Group_254" data-name="Group 254">
+        <path id="Path_173" data-name="Path 173" d="M6443.249,716.981a13.493,13.493,0,1,1-13.485,13.416A13.489,13.489,0,0,1,6443.249,716.981Zm11.831,13.486a11.827,11.827,0,1,0-11.819,11.84A11.854,11.854,0,0,0,6455.08,730.467Z" transform="translate(-6429.764 -716.981)" fill="#1fbbeb" stroke="#1fbbeb" stroke-width="1"/>
+        <path id="speedometer" d="M8.02.239a.816.816,0,0,1,0,1.153L5.362,4.051A2.854,2.854,0,1,1,4.208,2.9L6.867.239A.816.816,0,0,1,8.02.239ZM4.074,5.407A1.221,1.221,0,1,0,2.853,6.628,1.223,1.223,0,0,0,4.074,5.407Zm0,0" transform="matrix(-0.259, -0.966, 0.966, -0.259, 9.217, 17.73)" fill="#1fbbeb" stroke="#1fbbeb" stroke-width="0.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
