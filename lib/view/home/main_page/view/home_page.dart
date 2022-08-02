@@ -79,12 +79,7 @@ class _HomePageState extends ConsumerState<HomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GestureDetector(
-              onTap: () {
-                box.remove("token");
-                print(box.read("token"));
-              },
-              child: Image.asset("assets/images/Group 916.png")),
+          Image.asset("assets/images/Group 916.png"),
           Texty(text: "folovmi Technology", fontSize: 15, color: Colors.white),
           Row(
             children: [

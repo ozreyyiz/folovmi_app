@@ -101,36 +101,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
   Positioned _pictureContainer(BuildContext context) {
     return Positioned(
-      top: 0,
+      top: 10,
       child: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 254, 190, 212),
-            Colors.white,
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        )),
+      
         width: SizeConfig.sizeWidth(context, 1),
         height: SizeConfig.sizeHeight(context, 0.4),
-        child: Stack(
-          children: [
-            Center(
-              child: SvgPicture.asset("assets/images/1.svg"),
-            ),
-            Positioned(
-              left: -70,
-              bottom: 10,
-              child: SvgPicture.asset("assets/images/3.svg"),
-            ),
-            Positioned(
-              right: 10,
-              bottom: 10,
-              child: SvgPicture.asset("assets/images/2.svg"),
-            ),
-          ],
-        ),
+        child: Image.asset("assets/images/login_svg.jpg")
       ),
     );
   }

@@ -82,7 +82,9 @@ class _BaseViewState extends BaseState<BaseView> {
                       padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
                       child: NavigationDestination(
                           icon: SvgPicture.asset(
-                              "assets/images/navigation_bar_level_icon.svg"),
+                            "assets/images/navigation_bar_level_icon.svg",
+                            color: ColorConstants.BLUE,
+                          ),
                           label: ""),
                     ),
                     Padding(
@@ -96,14 +98,20 @@ class _BaseViewState extends BaseState<BaseView> {
                       padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
                       child: NavigationDestination(
                           icon: SvgPicture.asset(
-                              "assets/images/navigation_bar_home.svg"),
+                            "assets/images/navigation_bar_dashboard.svg",
+                            height: 30,
+                            color: ColorConstants.BLUE,
+                          ),
                           label: ""),
                     ),
                     Padding(
                       padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
                       child: NavigationDestination(
                           icon: SvgPicture.asset(
-                              "assets/images/navigation_bar_home.svg"),
+                            "assets/images/navigation_bar_menu.svg",
+                            color: ColorConstants.BLUE,
+                            height: 30,
+                          ),
                           label: ""),
                     ),
                   ],

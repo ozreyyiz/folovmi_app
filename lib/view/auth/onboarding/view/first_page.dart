@@ -7,7 +7,7 @@ import 'package:folovmi_app/core/components/container/white_container.dart';
 import 'package:folovmi_app/core/components/text/texty.dart';
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
 import 'package:folovmi_app/core/init/lang/locale_keys.g.dart';
-import 'package:folovmi_app/view/auth/onboarding/view/introduction_page.dart';
+import 'package:folovmi_app/view/auth/onboarding/view/welcome_page.dart';
 import 'package:folovmi_app/view/home/main_page/view/home_page.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -31,7 +31,7 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
             context, MaterialPageRoute(builder: ((context) => HomePage())));
       } else {
         Navigator.push(context,
-            MaterialPageRoute(builder: ((context) => IntroductionPage())));
+            MaterialPageRoute(builder: ((context) => WelcomePage())));
       }
     });
   }
@@ -41,25 +41,19 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
-        child: GestureDetector(
-          onTap: (() {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => IntroductionPage()));
-          }),
-          child: Stack(
-            children: [
-              Column(
-                children: [
-                  Expanded(flex: 3, child: WhiteContainer()),
-                  _folovmiLogo(size),
-                  const Expanded(flex: 4, child: WhiteContainer()),
-                ],
-              ),
-              _topCircle(size),
-              _bottomBigCircle(size),
-              _bottomSmallCircle(size),
-            ],
-          ),
+        child: Stack(
+          children: [
+            Column(
+              children: [
+                Expanded(flex: 3, child: WhiteContainer()),
+                _folovmiLogo(size),
+                const Expanded(flex: 4, child: WhiteContainer()),
+              ],
+            ),
+            _topCircle(size),
+            _bottomBigCircle(size),
+            _bottomSmallCircle(size),
+          ],
         ),
       ),
     );
