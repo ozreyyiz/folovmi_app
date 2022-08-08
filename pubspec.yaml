@@ -19,6 +19,7 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.17.3 <3.0.0"
+  flutter: "^2.8.1"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -45,6 +46,8 @@ dependencies:
   flutter_riverpod: ^1.0.4
   get_storage: ^2.0.3
   syncfusion_flutter_gauges: ^20.2.39
+  pretty_dio_logger: ^1.1.1
+  google_fonts: ^3.0.1
  
 
 dev_dependencies:
@@ -74,6 +77,8 @@ flutter:
     - assets/lang/
     - assets/images/
 
+
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -85,13 +90,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
+  fonts:
+    - family: neuropolitical
+      fonts:
+        - asset: assets/fonts/neuropolitical rg.ttf
+        
+        
+ 
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf

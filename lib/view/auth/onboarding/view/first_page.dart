@@ -6,6 +6,7 @@ import 'package:folovmi_app/core/components/animations/easy_in_out.dart';
 import 'package:folovmi_app/core/components/container/white_container.dart';
 import 'package:folovmi_app/core/components/text/texty.dart';
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
+import 'package:folovmi_app/core/init/extension/string_extension.dart';
 import 'package:folovmi_app/core/init/lang/locale_keys.g.dart';
 import 'package:folovmi_app/view/auth/onboarding/view/welcome_page.dart';
 import 'package:folovmi_app/view/home/main_page/view/home_page.dart';
@@ -25,13 +26,13 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 5), () {
       if (box.read("token") != null) {
         Navigator.push(
             context, MaterialPageRoute(builder: ((context) => HomePage())));
       } else {
-        Navigator.push(context,
-            MaterialPageRoute(builder: ((context) => WelcomePage())));
+        Navigator.push(
+            context, MaterialPageRoute(builder: ((context) => WelcomePage())));
       }
     });
   }
@@ -110,19 +111,23 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
               padding: const EdgeInsets.only(left: 60),
               child: Column(
                 children: [
-                  Texty(
-                    text: LocaleKeys.welcome_name,
-                    fontSize: 22,
-                    color: ColorConstants.BLACK,
+                  Text(
+                    LocaleKeys.welcome_name.locale,
+                    style: TextStyle(
+                        fontSize: 22,
+                        color: ColorConstants.BLACK,
+                        fontFamily: "neuropolitical"),
                   ),
                   Padding(
                     padding: EdgeInsets.only(
                       right: 5,
                     ),
-                    child: Texty(
-                      text: LocaleKeys.welcome_subtitle,
-                      fontSize: 15,
-                      color: ColorConstants.BLACK,
+                    child: Text(
+                      LocaleKeys.welcome_subtitle.locale,
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: ColorConstants.BLACK,
+                          fontFamily: "neuropolitical"),
                     ),
                   ),
                 ],

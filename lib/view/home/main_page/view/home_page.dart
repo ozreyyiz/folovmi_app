@@ -79,7 +79,8 @@ class _HomePageState extends ConsumerState<HomePage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset("assets/images/Group 916.png"),
+          // Image.asset("assets/images/Group 916.png"),
+             SvgPicture.asset("assets/images/camera.svg"),
           Texty(text: "folovmi Technology", fontSize: 15, color: Colors.white),
           Row(
             children: [

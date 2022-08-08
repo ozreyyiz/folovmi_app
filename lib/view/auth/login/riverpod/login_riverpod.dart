@@ -18,7 +18,7 @@ class LoginRiverpod extends ChangeNotifier {
     Center(
       child: CircularProgressIndicator(),
     );
-    service.loginCall(email: email.text, password: password.text).then((value) {
+    service.loginCall(email: email.text, password: password.text,context: context).then((value) {
       
       if (value != null) {
  

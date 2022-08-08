@@ -117,13 +117,16 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       child: TextFormField(
         validator: (value) => value!.isNotEmpty ? null : "This field required.",
         keyboardType: TextInputType.visiblePassword,
+        textInputAction: TextInputAction.done,
         obscureText: obscureText,
         controller: ref.read(loginRiverpod).password,
         decoration: InputDecoration(
+          
           suffixIcon: IconButton(
             onPressed: (() {
               setState(() {
                 obscureText = !obscureText;
+            
               });
             }),
             icon: Icon(Icons.remove_red_eye),

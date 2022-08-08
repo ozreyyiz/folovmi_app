@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Texty extends StatelessWidget {
   final String text;
@@ -18,7 +19,10 @@ class Texty extends StatelessWidget {
     return AutoSizeText(
       text.locale,
       // overflow: TextOverflow.ellipsis,
-      style: TextStyle(fontSize: fontSize, color: color),
+      style: GoogleFonts.roboto(
+        fontSize: fontSize,
+        color: color,
+      ),
     );
   }
 }

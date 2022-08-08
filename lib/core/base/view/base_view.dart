@@ -83,7 +83,8 @@ class _BaseViewState extends BaseState<BaseView> {
                       child: NavigationDestination(
                           icon: SvgPicture.asset(
                             "assets/images/navigation_bar_level_icon.svg",
-                            color: ColorConstants.BLUE,
+                            color: ColorConstants.BLUE
+                            ,
                           ),
                           label: ""),
                     ),
