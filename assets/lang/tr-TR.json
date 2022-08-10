@@ -1,0 +1,175 @@
+{
+   "random": {
+       "text": "Ama benim adım elvan dalton"
+   },
+   "welcome": {
+       "name": "folovmi Technology",
+       "subtitle": "Connect to Life",
+       "welcome": "Welcome",
+       "text": "McClintock’s eye for detail certainly helped narrow the whereabouts of lorem ipsum’s origin, however, the “how and when” still remain something of a mystery, with competing theories and timelines."
+   },
+   "introduction": {
+       "emergencyAlert": {
+           "header": "Gerçek Zamanlı Acil Durum Uyarısı",
+           "1": "akıllıFiş",
+           "2": "Akıllı termostat",
+           "3": "Sıcaklık ve Nem Sensörü",
+           "4": "Nem sensörü",
+           "5": "PIR sensörü",
+           "6": "Lüks sensör"
+       },
+       "vitalHealth": {
+           "header": "Gerçek Zamanlı Vital Sağlık İzleyici",
+           "1": "Nabız",
+           "2": "Vücut sıcaklığı",
+           "3": "Tansiyon",
+           "4": "Spo2",
+           "5": "Ecg"
+       },
+       "smartDevices": {
+           "header": "Akıllı Cihazlar Yönetimi",
+           "1": "Akıllı termostat",
+           "2": "Akıllı enerji"
+       },
+       "securityTracker": {
+           "header": "Gerçek Zamanlı Güvenlik İzleyici",
+           "1": "GeoFence",
+           "2": "Sonbahar",
+           "3": "SOS Çağrısı",
+           "4": "Gaz",
+           "5": "Duman "
+       },
+       "processManagement": {
+           "header": "Süreç yönetimi",
+           "1": "Sağlık",
+           "2": "Kalori",
+           "3": "Gelişmiş hatırlatma"
+       }
+   },
+   "signUp": {
+       "logIn": "Giriş yapmak",
+       "signUp": "Üye olmak",
+       "email": "E -posta adresi",
+       "password": "Şifre",
+       "forgotPassword": "Parolanızı mı unuttunuz?",
+       "passwordReminder": "Şifre hatırlatıcı",
+       "yourPassword": "Şifreniz, gönderildi",
+       "checkMail": "Lütfen emailinizi kontrol edin"
+   },
+   "register": {
+       "register": "Kayıt ol",
+       "email": "E -posta",
+       "name": "Adınız",
+       "surname": "Soyadın",
+       "phone": "Cep telefonu",
+       "id": "ID/Pass Numarası",
+       "birth": "Doğum tarihi",
+       "1": "1",
+       "2": "2",
+       "3": "3",
+       "smoke": "Sigara içer misiniz?",
+       "diabetes_staff": "Diyabet Personeli",
+       "diabetes_family": "Ailede diyabet",
+       "hearth_attack": "Kalp krizi",
+       "hypertension": "Hipertansiyon",
+       "disease_cure": "Büyük Hastalık Tedavisi",
+       "blind": "Görme engelli"
+   },
+   "health_monitor": {
+       "smart_health_monitor": "Akıllı Sağlık Monitörü",
+       "health_monitor": "Sağlık Monitörü",
+       "product_code": "Ürün Kodu",
+       "product_name": "Ürün adı",
+       "serial_number": "Seri numarası",
+       "gps": "GPS",
+       "health_over_limit_notice": "Sağlık Sınır Bildirimi",
+       "low_battery_warning": "Düşük pil uyarı",
+       "sms_notification": "SMS Bildirimi",
+       "email_notification": "Eposta bildirimi",
+       "application_notice": "Uygulama Bildirimi",
+       "ekg_respiratory": "EKG / Solunum Hızı",
+       "blood_pressure": "Tansiyon",
+       "body_temperature": "Vücut ısısı",
+       "spO2": "SpO2",
+       "hearth_rate": "Kalp atış hızı"
+   },
+   "ekg": {
+       "ekg": "Ekg",
+       "rr_max": "RR-Max",
+       "hrv": "HRV",
+       "mood": "Mod",
+       "duration": "Süre : "
+   },
+   "blood_pressure":{
+       "blood_pressure":"Tansiyon",
+       "spo2":"SpO2",
+       "danger_hypoxemia":"Tehlike hipokemi",
+       "low":"Düşük",
+       "normal":"normal",
+       "pulse":"Nabız",
+       "optimal":"En uygun",
+       "pre_high":"Yüksek",
+       "high":"Yüksek",
+       "systolic":"Sistolik",
+       "diastolic":"Diyastolik",
+       "80":"80.0",
+       "89":"89.0",
+       "95":"95.0",
+       "danger":"Tehlike",
+       "hypoxemia": "Hipoksemi"
+
+   },
+   "body_temperature":{
+       "body_temperature":"Vücut ısısı",
+       "fever":"Ateş",
+       "normal":"normal",
+       "high_fever":"Yüksek ateş",
+       "37":"37.7",
+       "39":"39.4",
+       "otpimal":"En uygun",
+      "pre_high":"Yüksek",
+      "high":"Yüksek"
+   },
+   
+   "wifi":{
+       "wifi_hotspot":"Wifi Hotspot",
+       "select_wifi":"2.4 GHz Wi-Fi ağını seçin ve şifre girin",
+       "continue":"Devam et",
+       "wifi":"Wi-Fi",
+       "connected":"Bağlı",
+       "available_networks":"Mevcut Ağlar",
+       "refresh":"Yenilemek",
+       "next":"Sonraki"
+   },
+   "smart_devices":"Akıllı cihazlar",
+
+   "device_reset":{
+       "device_reset":"Cihaz sıfırlama",
+       "open_close_button":"Lütfen açık/kapatıncaya kadar düğmeye basın.",
+       "light_open":"Işık sürekli yanıp sönüyor mu?",
+       "next":"Sonraki",
+       "back":"Geri",
+       "add_device":"Cihaz ekle",
+       "device_recognicion":"Lütfen cihaz tanıma işlemi bitene kadar bekleyin.",
+       "scan_devices":"Cihazları tarama",
+       "register_cloud":"Bulut'a kaydolun",
+       "initilaze_device":"Cihazı başlat",
+       "add_device_unsc":"Cihaz eklemek acımasızdır",
+       "not_respond":"Cihazdan yanıt vermeyin",
+       "is_warning_lamp":"Uyarı lambası yanıp sönüyor mu?",
+       "is_wifi_connection":"2.4GHz wifi bağlı mı?",
+       "is_your_password":"WiFi şifreniz doğru mu?",
+       "again":"Tekrar",
+       "add_device_success":"Cihaz eklemek başarıldı.",
+       "added_device":"Eklenen Cihaz",
+       "device_name":"Cihaz adı",
+       "device_place":"Cihaz Yeri",
+       "livingroom":"Oturma odası",
+       "bathroom":"Banyo",
+       "kitchen":"Mutfak"
+       
+   }
+
+
+   
+}

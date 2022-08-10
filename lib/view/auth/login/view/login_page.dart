@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,9 +26,12 @@ class LoginPage extends ConsumerStatefulWidget {
 }
 
 class _LoginPageState extends ConsumerState<LoginPage> {
+
   bool obscureText = false;
   @override
   Widget build(BuildContext context) {
+      final locale=Localizations.localeOf(context);
+      final language=locale.languageCode;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -42,7 +46,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 child: SvgPicture.asset("assets/images/Turn Back Icon.svg")),
           ),
           _pictureContainer(context),
-          _headerContainer(context),
+          _headerContainer(context,language),
           _dataField(context),
         ],
       ),
@@ -103,11 +107,9 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     return Positioned(
       top: 10,
       child: Container(
-      
-        width: SizeConfig.sizeWidth(context, 1),
-        height: SizeConfig.sizeHeight(context, 0.4),
-        child: Image.asset("assets/images/login_svg.jpg")
-      ),
+          width: SizeConfig.sizeWidth(context, 1),
+          height: SizeConfig.sizeHeight(context, 0.4),
+          child: Image.asset("assets/images/login_svg.jpg")),
     );
   }
 
@@ -121,12 +123,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         obscureText: obscureText,
         controller: ref.read(loginRiverpod).password,
         decoration: InputDecoration(
-          
           suffixIcon: IconButton(
             onPressed: (() {
               setState(() {
                 obscureText = !obscureText;
-            
               });
             }),
             icon: Icon(Icons.remove_red_eye),
@@ -155,7 +155,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     );
   }
 
-  Positioned _headerContainer(BuildContext context) {
+  Positioned _headerContainer(BuildContext context,String a) {
     return Positioned(
       top: SizeConfig.sizeHeight(context, 0.4),
       child: Container(
@@ -171,7 +171,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             child: Texty(
               color: ColorConstants.WHITE,
               fontSize: 20,
-              text: LocaleKeys.signUp_signUp,
+              text: a,
             ),
           ),
         ),

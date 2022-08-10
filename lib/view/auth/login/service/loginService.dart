@@ -63,7 +63,7 @@ class LoginService {
             response.statusCode == 203 ||
             response.statusCode == 204) {
           print('OUTPUT DATA : $response');
-          print('içerdema');
+          // print('içerdema');
 
           return response;
         } else if (response.statusCode == 500 || response.statusCode == 409) {
@@ -76,9 +76,7 @@ class LoginService {
          
         } 
 
-        else if (DioErrorType.response == 403) {
-          throw Exception("Forbidden");
-        } else {
+       else {
           throw Exception(response.statusMessage);
         }
       } on DioError catch (ex) {

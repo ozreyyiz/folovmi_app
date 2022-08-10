@@ -20,7 +20,6 @@ import 'package:folovmi_app/view/home/smart_devices/blood_temperature/blood_pres
 import 'package:folovmi_app/view/home/smart_devices/body_temperature/body_temperature_second.dart';
 import 'package:folovmi_app/view/home/smart_devices/smart_devices/view/smart_devices_page.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
@@ -29,7 +28,7 @@ void main() async {
       child: EasyLocalization(
         child: MyApp(),
         supportedLocales: [
-          // AppConstants.TR_LOCALE,
+          AppConstants.TR_LOCALE,
           AppConstants.EN_LOCALE,
         ],
         path: AppConstants.LANGUAGE_PATH,
@@ -39,6 +38,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: buildMaterialColor(Color(0xFFF1FBBEB)),
       ),
-      home:LoginPage(),
+      home: LoginPage(),
     );
   }
 
