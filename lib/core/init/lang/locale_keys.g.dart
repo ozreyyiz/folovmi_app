@@ -48,6 +48,8 @@ abstract class  LocaleKeys {
   static const signUp_passwordReminder = 'signUp.passwordReminder';
   static const signUp_yourPassword = 'signUp.yourPassword';
   static const signUp_checkMail = 'signUp.checkMail';
+  static const signUp_alredyUser = 'signUp.alredyUser';
+  static const signUp_Login = 'signUp.Login';
   static const signUp = 'signUp';
   static const register_register = 'register.register';
   static const register_email = 'register.email';

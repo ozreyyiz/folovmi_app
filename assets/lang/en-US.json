@@ -54,7 +54,9 @@
         "forgotPassword": "Forgot your password?",
         "passwordReminder": "Password Reminder",
         "yourPassword": "Your Password , Sent",
-        "checkMail": "Please check your email"
+        "checkMail": "Please check your email",
+        "alredyUser":"Alredy a user?",
+        "Login":"LOGIN"
     },
     "register": {
         "register": "Register",
