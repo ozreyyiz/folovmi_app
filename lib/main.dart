@@ -11,6 +11,7 @@ import 'package:folovmi_app/view/auth/onboarding/widgets/first_page_circle_widge
 import 'package:folovmi_app/view/auth/register/view/register_first_page.dart';
 import 'package:folovmi_app/view/auth/register/view/register_second_page.dart';
 import 'package:folovmi_app/view/auth/register/view/register_third_page.dart';
+import 'package:folovmi_app/view/auth/register/view/terms_of_user_page.dart';
 import 'package:folovmi_app/view/default/view/default_page.dart';
 import 'package:folovmi_app/view/home/main_page/view/home_page.dart';
 import 'package:folovmi_app/view/home/settings/wifi_settings/view/device_reset.dart';
@@ -38,7 +39,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: buildMaterialColor(Color(0xFFF1FBBEB)),
       ),
-      home: LoginPage(),
+      home: WelcomePage(),
     );
   }
 

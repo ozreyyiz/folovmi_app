@@ -168,7 +168,23 @@
        "bathroom":"Banyo",
        "kitchen":"Mutfak"
        
+   },
+   "user_terms":{
+    "user_terms":"Kullanıcı Koşulları",
+    "why_phone_number":"Neden Telefonunu İstiyoruz?",
+    "terms_of_use_first":"Kullanım koşullarını",
+    "terms_of_use_second":" okudum ve kabul ediyorum. Kişisel Verilerin Korunması Hakkında ",
+    "terms_of_use_third":"Aydınlatma Metni'ni",
+    "terms_of_use_fourth":" okudum ve içeriğini anladım.",
+    "terms_of_use_fifth":"",
+    "personal_data_first":"Kişisel Verilere İlişkin ",
+    "personal_data_second":"Açık Rıza Metni'ni ",
+    "personal_data_third":"okudum ve onaylıyorum.",
+    "sms_permission":"İndirim, kampanya ve özel promosyon duyurularını SMS yoluyla almak istiyorum.",
+    "continue":"Devam et"
    }
+
+   
 
 
    

@@ -30,8 +30,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   bool obscureText = false;
   @override
   Widget build(BuildContext context) {
-      final locale=Localizations.localeOf(context);
-      final language=locale.languageCode;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -46,7 +44,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 child: SvgPicture.asset("assets/images/Turn Back Icon.svg")),
           ),
           _pictureContainer(context),
-          _headerContainer(context,language),
+          _headerContainer(context),
           _dataField(context),
         ],
       ),
@@ -155,7 +153,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     );
   }
 
-  Positioned _headerContainer(BuildContext context,String a) {
+  Positioned _headerContainer(BuildContext context) {
     return Positioned(
       top: SizeConfig.sizeHeight(context, 0.4),
       child: Container(
@@ -171,7 +169,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             child: Texty(
               color: ColorConstants.WHITE,
               fontSize: 20,
-              text: a,
+              text: LocaleKeys.signUp_logIn,
             ),
           ),
         ),

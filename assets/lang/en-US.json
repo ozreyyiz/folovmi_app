@@ -168,7 +168,22 @@
         "bathroom":"Bathroom",
         "kitchen":"Kitchen"
         
-    }
+    },
+    "user_terms":{
+        "user_terms":"User Conditions",
+        "why_phone_number":"Why do we want your phone?",
+        "terms_of_use_first":"I have read and I accept the ",
+        "terms_of_use_second":"Terms of Use",
+        "terms_of_use_third":"I have read the Information Text ",
+        "terms_of_use_fourth":"Clarification Text on the Protection of Personal Data ",
+        "terms_of_use_fifth":"and understood its content.",
+        "personal_data_first":"I have read and approved the ",
+        "personal_data_second":"Explicit Consent Text ",
+        "personal_data_third":"Regarding Personal Data.",
+        "sms_permission":"I would like to get discounts, campaigns and special promotional announcements via SMS.",
+        "continue":"Continue"
+       }
+
 
 
     

@@ -151,5 +151,18 @@ abstract class  LocaleKeys {
   static const device_reset_bathroom = 'device_reset.bathroom';
   static const device_reset_kitchen = 'device_reset.kitchen';
   static const device_reset = 'device_reset';
+  static const user_terms_user_terms = 'user_terms.user_terms';
+  static const user_terms_why_phone_number = 'user_terms.why_phone_number';
+  static const user_terms_terms_of_use_first = 'user_terms.terms_of_use_first';
+  static const user_terms_terms_of_use_second = 'user_terms.terms_of_use_second';
+  static const user_terms_terms_of_use_third = 'user_terms.terms_of_use_third';
+  static const user_terms_terms_of_use_fourth = 'user_terms.terms_of_use_fourth';
+  static const user_terms_terms_of_use_fifth = 'user_terms.terms_of_use_fifth';
+  static const user_terms_personal_data_first = 'user_terms.personal_data_first';
+  static const user_terms_personal_data_second = 'user_terms.personal_data_second';
+  static const user_terms_personal_data_third = 'user_terms.personal_data_third';
+  static const user_terms_sms_permission = 'user_terms.sms_permission';
+  static const user_terms_continue = 'user_terms.continue';
+  static const user_terms = 'user_terms';
 
 }

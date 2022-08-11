@@ -5,6 +5,7 @@ import 'package:folovmi_app/core/constants/border_radius/border_radius_constants
 import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/view/auth/login/view/login_page.dart';
 import 'package:folovmi_app/view/auth/register/view/register_first_page.dart';
+import 'package:folovmi_app/view/auth/register/view/terms_of_user_page.dart';
 import '../../../../core/components/button/standart_button.dart';
 import '../../../../core/components/text/texty.dart';
 import '../../../../core/constants/color/color_constants.dart';
@@ -76,7 +77,7 @@ class _WelcomePageState extends State<WelcomePage> {
           duration: Duration(milliseconds: 1800),
           child: WelcomePageButton(
               onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => LoginPage()))),
+                  MaterialPageRoute(builder: ((context) => TermsofUserPage()))),
               color: ColorConstants.WHITE,
               text: LocaleKeys.signUp_signUp,
               textColor: _ColorsConstants.LOGIN_BLUE),
