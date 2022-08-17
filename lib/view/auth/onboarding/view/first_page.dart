@@ -26,6 +26,7 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
   @override
   void initState() {
     super.initState();
+    box.erase();
     Future.delayed(Duration(seconds: 5), () {
       if (box.read("token") != null) {
         Navigator.push(

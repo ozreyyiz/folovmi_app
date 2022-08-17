@@ -84,7 +84,9 @@ class _HomePageState extends ConsumerState<HomePage> {
           Texty(text: "folovmi Technology", fontSize: 15, color: Colors.white),
           Row(
             children: [
-              SvgPicture.asset("assets/images/a.svg"),
+              GestureDetector(onTap: (){
+                box.erase();
+              },child: SvgPicture.asset("assets/images/a.svg")),
               GestureDetector(
                   onTap: (() => Navigator.push(
                         context,

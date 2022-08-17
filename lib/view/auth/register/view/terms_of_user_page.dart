@@ -8,6 +8,7 @@ import 'package:folovmi_app/core/constants/padding/padding_constants.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
 import 'package:folovmi_app/view/auth/register/view/register_first_page.dart';
+import 'package:folovmi_app/view/auth/register/view/sign_up_page.dart';
 
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
@@ -99,7 +100,7 @@ class _TermsofUserPageState extends State<TermsofUserPage> {
         onPressed: () {
           isButton
               ? Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => RegisterFirstPage()))
+                  MaterialPageRoute(builder: (context) => SignUpPage()))
               : null;
         });
   }

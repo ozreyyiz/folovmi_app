@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:folovmi_app/core/components/box/width_box.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
+import 'package:folovmi_app/view/auth/login/view/login_page.dart';
 import 'package:folovmi_app/view/riverpod/riverpod_management.dart';
 
 import '../../../../core/components/animations/decelerate.dart';
@@ -69,7 +70,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 const SizedBox(height: 10),
                 _passwordField(),
                 const SizedBox(height: 10),
-                _loginButton(context),
+                _signUpButton(context),
                 const SizedBox(
                   height: 10,
                 ),
@@ -90,7 +91,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
       child: GestureDetector(
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => PasswordReminderPage()));
+              MaterialPageRoute(builder: (context) => LoginPage()));
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -130,7 +131,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
         keyboardType: TextInputType.visiblePassword,
         textInputAction: TextInputAction.done,
         obscureText: obscureText,
-        controller: ref.read(loginRiverpod).password,
+        controller: ref.read(signUpRiverpod).password,
         decoration: InputDecoration(
           suffixIcon: IconButton(
             onPressed: (() {
@@ -188,16 +189,16 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
     );
   }
 
-  DecelerateAnimation _loginButton(BuildContext context) {
+  DecelerateAnimation _signUpButton(BuildContext context) {
     return DecelerateAnimation(
       duration: Duration(milliseconds: 1000),
       child: SignUpBigButton(
         onPressed: () {
-          if (ref.read(loginRiverpod).email.text.length < 5) {
+          if (ref.read(signUpRiverpod).email.text.length < 5) {
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text("data")));
           } else {
-            ref.read(loginRiverpod).fetch(context);
+            ref.read(signUpRiverpod).fetch(context);
           }
         },
         text: LocaleKeys.signUp_signUp,
@@ -210,7 +211,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
       duration: Duration(milliseconds: 500),
       child: SignUpInputBox(
         keyboard: TextInputType.emailAddress,
-        controller: ref.read(loginRiverpod).email,
+        controller: ref.read(signUpRiverpod).email,
         hintText: LocaleKeys.signUp_email,
       ),
     );

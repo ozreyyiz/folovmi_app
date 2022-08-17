@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
 import 'package:folovmi_app/view/auth/login/view/password_reminder_page.dart';
 import 'package:folovmi_app/view/riverpod/riverpod_management.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../../core/components/animations/decelerate.dart';
 import '../../../../core/components/text/texty.dart';
@@ -26,6 +27,8 @@ class LoginPage extends ConsumerStatefulWidget {
 }
 
 class _LoginPageState extends ConsumerState<LoginPage> {
+  final box = GetStorage();
+
 
   bool obscureText = false;
   @override
@@ -80,6 +83,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                   duration: Duration(milliseconds: 1200),
                   child: GestureDetector(
                     onTap: () {
+                      print(box.read("token"));
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -195,6 +199,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   }
 
   DecelerateAnimation _emailField() {
+    
     return DecelerateAnimation(
       duration: Duration(milliseconds: 500),
       child: SignUpInputBox(
