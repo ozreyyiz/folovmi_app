@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/view/default/view/default_page.dart';
 import 'package:folovmi_app/view/home/main_page/service/smart_devices_list.dart';
+import 'package:folovmi_app/view/home/main_page/widgets/weather_box.dart';
 import 'package:folovmi_app/view/home/smart_devices/model/smart_device_model.dart';
 import 'package:folovmi_app/view/home/smart_devices/smart_devices/view/smart_devices_page.dart';
 import 'package:get_storage/get_storage.dart';
@@ -39,7 +40,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: _dataScreen(),
+            child: WeatherBox(context: context),
           ),
           _buttons(),
           Container(
@@ -147,126 +148,6 @@ class _HomePageState extends ConsumerState<HomePage> {
   }
 
   a() {}
-  Container _dataScreen() {
-    return Container(
-      height: SizeConfig.sizeHeight(context, 0.3),
-      width: SizeConfig.sizeWidth(context, 1),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadiusConstants.BORDER_RADIUS_CONTAINER,
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Color.fromARGB(255, 224, 226, 229),
-              offset: const Offset(
-                0.0,
-                1.5,
-              ),
-              blurRadius: 2.0,
-              spreadRadius: 1.0,
-            ),
-          ]),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(
-              children: [
-                SvgPicture.asset("assets/images/sun.svg"),
-                SizedBox(width: 10),
-                Texty(
-                  text: "Sun / Istanbul",
-                  fontSize: 18,
-                  color: ColorConstants.ORANGE,
-                ),
-              ],
-            ),
-            Divider(color: ColorConstants.GRAY_FONT, height: 20),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Texty(
-                      text: "       ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "Temperature",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "Humidty",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "PM2.5",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Texty(
-                      text: "Outside",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "25      ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "   54   ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "   Mid  ",
-                      fontSize: 15,
-                      color: Colors.green,
-                    ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Texty(
-                      text: "Inside   ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "28      ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "   63   ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                    Texty(
-                      text: "            ",
-                      fontSize: 15,
-                      color: ColorConstants.BLUE_DATA,
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+ 
+
 }

@@ -48,6 +48,7 @@ dependencies:
   syncfusion_flutter_gauges: ^20.2.39
   pretty_dio_logger: ^1.1.1
   google_fonts: ^3.0.1
+  geolocator: ^9.0.1
  
 
 dev_dependencies:

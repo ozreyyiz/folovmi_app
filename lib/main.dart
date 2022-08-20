@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: buildMaterialColor(Color(0xFFF1FBBEB)),
       ),
-      home: SignUpPage(),
+      home: HomePage(),
     );
   }
 
