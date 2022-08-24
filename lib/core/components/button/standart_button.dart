@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/view/default/view/default_page.dart';
 
 import '../../constants/border_radius/border_radius_constants.dart';
@@ -32,6 +33,7 @@ class StandartButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: Container(
+          height: SizeConfig.sizeHeight(context, .08),
           width: width,
           child: Center(
             child: Padding(

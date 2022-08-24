@@ -6,9 +6,11 @@ import 'package:folovmi_app/core/components/animations/easy_in_out.dart';
 import 'package:folovmi_app/core/components/container/white_container.dart';
 import 'package:folovmi_app/core/components/text/texty.dart';
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
+import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
 import 'package:folovmi_app/core/init/lang/locale_keys.g.dart';
 import 'package:folovmi_app/view/auth/onboarding/view/welcome_page.dart';
+import 'package:folovmi_app/view/auth/onboarding/widgets/folovmi_logo.dart';
 import 'package:folovmi_app/view/home/main_page/view/home_page.dart';
 import 'package:get_storage/get_storage.dart';
 
@@ -27,7 +29,7 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
   void initState() {
     super.initState();
     box.erase();
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       if (box.read("token") != null) {
         Navigator.push(
             context, MaterialPageRoute(builder: ((context) => HomePage())));
@@ -48,7 +50,7 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
             Column(
               children: [
                 Expanded(flex: 3, child: WhiteContainer()),
-                _folovmiLogo(size),
+                FolovmiLogo(),
                 const Expanded(flex: 4, child: WhiteContainer()),
               ],
             ),
@@ -97,49 +99,10 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
     );
   }
 
-  Widget _folovmiLogo(Size size) {
-    return EasyInOutAnimation(
-      duration: Duration(milliseconds: 1000),
-      child: Expanded(
-        flex: 7,
-        child: Column(
-          children: [
-            Image.asset(
-              "assets/images/folovmi_logo.png",
-              height: size.height * 5.7 / 14,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 60),
-              child: Column(
-                children: [
-                  Text(
-                    LocaleKeys.welcome_name.locale,
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: ColorConstants.BLACK,
-                        fontFamily: "neuropolitical"),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      right: 5,
-                    ),
-                    child: Text(
-                      LocaleKeys.welcome_subtitle.locale,
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: ColorConstants.BLACK,
-                          fontFamily: "neuropolitical"),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+
 }
+
+
 
 class _ColorConstants {
   static Color PINK = HexColor("FD7993");

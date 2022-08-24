@@ -182,9 +182,15 @@
     "personal_data_third":"okudum ve onaylıyorum.",
     "sms_permission":"İndirim, kampanya ve özel promosyon duyurularını SMS yoluyla almak istiyorum.",
     "continue":"Devam et"
-   }
+   },
 
-   
+   "weather":{
+    "temperature":"Sıcaklık",
+    "humidty":"Nem",
+    "pm2_5":"PM 2.5",
+    "outside":"Dışarıda",
+    "inside":"İçeri"
+   }
 
 
    

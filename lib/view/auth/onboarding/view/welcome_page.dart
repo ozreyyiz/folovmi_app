@@ -4,6 +4,7 @@ import 'package:folovmi_app/core/components/animations/easy_in_out.dart';
 import 'package:folovmi_app/core/constants/border_radius/border_radius_constants.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/view/auth/login/view/login_page.dart';
+import 'package:folovmi_app/view/auth/onboarding/widgets/folovmi_logo.dart';
 import 'package:folovmi_app/view/auth/register/view/register_first_page.dart';
 import 'package:folovmi_app/view/auth/register/view/terms_of_user_page.dart';
 import '../../../../core/components/button/standart_button.dart';
@@ -27,7 +28,7 @@ class _WelcomePageState extends State<WelcomePage> {
       body: Column(
         children: [
           SizedBox(height: 20),
-          _folovmiLogo(size),
+          Expanded(flex: 4, child: FolovmiLogo()),
           Expanded(
             flex: 3,
             child: Container(
@@ -36,15 +37,18 @@ class _WelcomePageState extends State<WelcomePage> {
                   color: ColorConstants.LIGHTBLUE,
                   borderRadius: BorderRadiusConstants.HALF_BORDER_RADIUS),
               child: Padding(
-                padding: const EdgeInsets.only(left: 30, right: 30, top: 25),
+                padding: const EdgeInsets.only(
+                    left: 30, right: 30, top: 25, bottom: 25),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Spacer(),
                     _welcome(),
                     const SizedBox(height: 20),
                     _welcomeText(),
                     const SizedBox(height: 20),
                     _buttons(context),
+                    Spacer(),
                   ],
                 ),
               ),
@@ -66,8 +70,8 @@ class _WelcomePageState extends State<WelcomePage> {
         EasyInOutAnimation(
           duration: Duration(milliseconds: 1200),
           child: WelcomePageButton(
-            onPressed: ()=>  Navigator.push(
-        context, MaterialPageRoute(builder: ((context) => LoginPage()))),
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => LoginPage()))),
             textColor: ColorConstants.WHITE,
             color: _ColorsConstants.LOGIN_BLUE,
             text: LocaleKeys.signUp_logIn,
@@ -86,54 +90,24 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 
-  Texty _welcomeText() {
-    return Texty(
-      text: LocaleKeys.welcome_text,
-      color: ColorConstants.WHITE,
-      fontSize: 14,
+  Widget _welcomeText() {
+    return SizedBox(
+      height: SizeConfig.sizeHeight(context, 0.1),
+      child: Texty(
+        text: LocaleKeys.welcome_text,
+        color: ColorConstants.WHITE,
+        fontSize: 14,
+      ),
     );
   }
 
-  Texty _welcome() {
-    return Texty(
-      text: LocaleKeys.welcome_welcome,
-      color: ColorConstants.WHITE,
-      fontSize: 32,
-    );
-  }
-
-  Expanded _folovmiLogo(Size size) {
-    return Expanded(
-      flex: 4,
-      child: Column(
-        children: [
-          Image.asset(
-            "assets/images/folovmi_logo.png",
-            height: size.height * 5.7 / 14,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 60),
-            child: Column(
-              children: [
-                Texty(
-                  text: LocaleKeys.welcome_name,
-                  fontSize: 22,
-                  color: ColorConstants.BLACK,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    right: 5,
-                  ),
-                  child: Texty(
-                    text: LocaleKeys.welcome_subtitle,
-                    fontSize: 15,
-                    color: ColorConstants.BLACK,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+  Widget _welcome() {
+    return SizedBox(
+      height: SizeConfig.sizeHeight(context, .05),
+      child: Texty(
+        text: LocaleKeys.welcome_welcome,
+        color: ColorConstants.WHITE,
+        fontSize: 32,
       ),
     );
   }

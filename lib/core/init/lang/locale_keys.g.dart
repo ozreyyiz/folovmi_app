@@ -166,5 +166,11 @@ abstract class  LocaleKeys {
   static const user_terms_sms_permission = 'user_terms.sms_permission';
   static const user_terms_continue = 'user_terms.continue';
   static const user_terms = 'user_terms';
+  static const weather_temperature = 'weather.temperature';
+  static const weather_humidty = 'weather.humidty';
+  static const weather_pm2_5 = 'weather.pm2_5';
+  static const weather_outside = 'weather.outside';
+  static const weather_inside = 'weather.inside';
+  static const weather = 'weather';
 
 }

@@ -13,7 +13,6 @@ import 'package:folovmi_app/view/auth/register/view/register_second_page.dart';
 import 'package:folovmi_app/view/auth/register/view/register_third_page.dart';
 import 'package:folovmi_app/view/auth/register/view/sign_up_page.dart';
 import 'package:folovmi_app/view/auth/register/view/terms_of_user_page.dart';
-import 'package:folovmi_app/view/default/view/default_page.dart';
 import 'package:folovmi_app/view/home/main_page/view/home_page.dart';
 import 'package:folovmi_app/view/home/settings/wifi_settings/view/device_reset.dart';
 import 'package:folovmi_app/view/home/settings/wifi_settings/view/wifi_connection_page.dart';

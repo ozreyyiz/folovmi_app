@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:folovmi_app/core/init/lang/locale_keys.g.dart';
 import 'package:folovmi_app/view/home/main_page/model/weather_model.dart';
 import 'package:folovmi_app/view/home/main_page/service/weather_service/get_location_service.dart';
 import 'package:folovmi_app/view/home/main_page/service/weather_service/permission_location.dart';
@@ -62,7 +63,7 @@ class _WeatherBoxState extends State<WeatherBox> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -78,95 +79,121 @@ class _WeatherBoxState extends State<WeatherBox> {
                     ],
                   ),
                   Divider(color: ColorConstants.GRAY_FONT, height: 20),
-                  Column(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Texty(
-                            text: "       ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "Temperature",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "Humidty",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "PM2.5",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                        ],
+                      SizedBox(
+                        width: SizeConfig.sizeWidth(context, 0.21),
+                        height: SizeConfig.sizeHeight(context, 0.1),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(height: 16),
+                            Texty(
+                              text: LocaleKeys.weather_inside,
+                              fontSize: 16,
+                              color: ColorConstants.BLUE_FONT,
+                            ),
+                            Texty(
+                              text: LocaleKeys.weather_outside,
+                              fontSize: 16,
+                              color: ColorConstants.BLUE_FONT,
+                            ),
+                          ],
+                        ),
                       ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Texty(
-                            text: "Outside",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "${_weather.temperature}      ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "   ${_weather.humidity}   ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "   Mid  ",
-                            fontSize: 15,
-                            color: Colors.green,
-                          ),
-                        ],
+                      SizedBox(
+                        width: SizeConfig.sizeWidth(context, 0.22),
+                        height: SizeConfig.sizeHeight(context, 0.1),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                                width: SizeConfig.sizeWidth(context, 0.22),
+                                height: 25,
+                                child: _text(LocaleKeys.weather_temperature)),
+                            _text(_weather.temperature.toString()),
+                            _text(_weather.temperature.toString()),
+                          ],
+                        ),
                       ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Texty(
-                            text: "Inside   ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "28      ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "   63   ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                          Texty(
-                            text: "            ",
-                            fontSize: 15,
-                            color: ColorConstants.BLUE_DATA,
-                          ),
-                        ],
+                      SizedBox(
+                        width: SizeConfig.sizeWidth(context, 0.21),
+                        height: SizeConfig.sizeHeight(context, 0.1),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                              width: SizeConfig.sizeWidth(context, 0.2),
+                              height: 20,
+                              child: _text(LocaleKeys.weather_humidty),
+                            ),
+                            _text(_weather.humidity.toString()),
+                            _text(_weather.humidity.toString()),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: SizeConfig.sizeWidth(context, 0.21),
+                        height: SizeConfig.sizeHeight(context, 0.1),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                              width: SizeConfig.sizeWidth(context, 0.21),
+                              height: 20,
+                              child: _text(LocaleKeys.weather_pm2_5),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Texty(
+                                  text: "Mid",
+                                  fontSize: 15,
+                                  color: Colors.green,
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Texty(
+                                  text: "Mid",
+                                  fontSize: 15,
+                                  color: Colors.green,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
             );
+          } else if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
           }
           return Container();
         },
       ),
+    );
+  }
+
+  Row _text(String text) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Texty(
+          text: text,
+          fontSize: 16,
+          color: ColorConstants.BLUE_FONT,
+        ),
+      ],
     );
   }
 }

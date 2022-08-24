@@ -29,7 +29,6 @@ class LoginPage extends ConsumerStatefulWidget {
 class _LoginPageState extends ConsumerState<LoginPage> {
   final box = GetStorage();
 
-
   bool obscureText = false;
   @override
   Widget build(BuildContext context) {
@@ -59,7 +58,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       bottom: 0,
       child: Container(
         width: SizeConfig.sizeWidth(context, 1),
-        height: SizeConfig.sizeHeight(context, 0.5),
+        height: SizeConfig.sizeHeight(context, 0.52),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadiusConstants.HALF_BORDER_RADIUS,
@@ -70,35 +69,37 @@ class _LoginPageState extends ConsumerState<LoginPage> {
             autovalidateMode: AutovalidateMode.always,
             child: Column(
               children: [
+                Spacer(flex: 2),
                 _emailField(),
-                const SizedBox(height: 10),
+                Spacer(flex: 1),
                 _passwordField(),
-                const SizedBox(height: 10),
+                Spacer(flex: 2),
                 _loginButton(context),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Spacer(),
-                DecelerateAnimation(
-                  duration: Duration(milliseconds: 1200),
-                  child: GestureDetector(
-                    onTap: () {
-                      print(box.read("token"));
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => PasswordReminderPage()));
-                    },
-                    child: Texty(
-                      text: LocaleKeys.signUp_forgotPassword,
-                      fontSize: 20,
-                      color: ColorConstants.BLUE,
-                    ),
-                  ),
-                ),
-                const Spacer(),
+                Spacer(flex: 3),
+                _forgotPassword(context),
+                Spacer(flex: 1),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  DecelerateAnimation _forgotPassword(BuildContext context) {
+    return DecelerateAnimation(
+      duration: Duration(milliseconds: 1200),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => PasswordReminderPage()));
+        },
+        child: SizedBox(
+          height: SizeConfig.sizeHeight(context, .022),
+          child: Texty(
+            text: LocaleKeys.signUp_forgotPassword,
+            fontSize: 20,
+            color: ColorConstants.BLUE,
           ),
         ),
       ),
@@ -159,7 +160,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
   Positioned _headerContainer(BuildContext context) {
     return Positioned(
-      top: SizeConfig.sizeHeight(context, 0.4),
+      top: SizeConfig.sizeHeight(context, 0.38),
       child: Container(
         width: SizeConfig.sizeWidth(context, 1),
         height: SizeConfig.sizeHeight(context, 0.2),
@@ -199,7 +200,6 @@ class _LoginPageState extends ConsumerState<LoginPage> {
   }
 
   DecelerateAnimation _emailField() {
-    
     return DecelerateAnimation(
       duration: Duration(milliseconds: 500),
       child: SignUpInputBox(

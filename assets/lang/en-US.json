@@ -184,6 +184,13 @@
         "personal_data_third":"Regarding Personal Data.",
         "sms_permission":"I would like to get discounts, campaigns and special promotional announcements via SMS.",
         "continue":"Continue"
+       },
+       "weather":{
+        "temperature":"Temperature",
+        "humidty":"Humidity",
+        "pm2_5":"PM 2.5",
+        "outside":"Outside",
+        "inside":"Inside"
        }
 
 

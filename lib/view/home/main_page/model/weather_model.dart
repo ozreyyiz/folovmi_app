@@ -10,7 +10,7 @@ Weather({this.cityName,this.temperature,this.humidity,this.country, this.weather
 Weather.fromJson(Map<String,dynamic> json){
   cityName=json["name"];
   temperature=json["main"]["temp"];
-  humidity=json["main"]["humidty"];
+  humidity=json["main"]["humidity"];
   country=json["sys"]["country"];
   weatherDescription=json["visibilty"];
 }

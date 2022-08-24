@@ -14,7 +14,7 @@ class WeatherService {
     var response = await _dio.get(api);
     var body = response.data;
     print(Weather.fromJson(body).cityName);
-    print(Weather.fromJson(body).weatherDescription);
+    print(Weather.fromJson(body).humidity);
 
     print("olay");
 
