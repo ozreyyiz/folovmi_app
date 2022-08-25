@@ -74,66 +74,7 @@ class _BaseViewState extends BaseState<BaseView> {
                 _turnBackIcon(),
                 widget.isShort ? _bodyShort(context) : _bodyLong(context),
                 widget.sign ? _signInUpdate() : const Center(),
-                Positioned(
-                  bottom: 0,
-                  child: Container(padding: EdgeInsets.only(bottom: 10),
-                    color: ColorConstants.WHITE,
-                    height: SizeConfig.sizeHeight(context, .09),
-                    width: SizeConfig.sizeWidth(context, 1),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        InkWell(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: ((context) => HomePage()))),
-                          child: Padding(
-                            padding:
-                                PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-                            child: SvgPicture.asset(
-                                "assets/images/navigation_bar_home.svg"),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: ((context) => DashboardPage()))),
-                          child: Padding(
-                            padding:
-                                PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-                            child: SvgPicture.asset(
-                              "assets/images/navigation_bar_level_icon.svg",
-                              color: ColorConstants.BLUE,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-                          child: SvgPicture.asset(
-                              "assets/images/navigation_bar_time_icon.svg"),
-                        ),
-                        Padding(
-                          padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-                          child: SvgPicture.asset(
-                            "assets/images/navigation_bar_dashboard.svg",
-                            height: 30,
-                            color: ColorConstants.BLUE,
-                          ),
-                        ),
-                        Padding(
-                          padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-                          child: SvgPicture.asset(
-                            "assets/images/navigation_bar_menu.svg",
-                            color: ColorConstants.BLUE,
-                            height: 30,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                widget.isNavigationBar ? _navigationBar(context) : SizedBox(),
               ],
             ),
           ],
@@ -142,65 +83,60 @@ class _BaseViewState extends BaseState<BaseView> {
     );
   }
 
-  NavigationBarTheme _navigationBar() {
-    return NavigationBarTheme(
-      data: NavigationBarThemeData(
-          indicatorColor: ColorConstants.BLUE_SHADOW,
-          indicatorShape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-      child: NavigationBar(
-        selectedIndex: index,
-        onDestinationSelected: (index) => setState(() {
-          this.index = index;
-          print(index);
-        }),
-        height: 50,
-        backgroundColor: ColorConstants.WHITE,
-        elevation: 10,
-        destinations: [
-          Padding(
-            padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-            child: NavigationDestination(
-                icon: SvgPicture.asset("assets/images/navigation_bar_home.svg"),
-                label: ""),
-          ),
-          Padding(
-            padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-            child: NavigationDestination(
-                icon: SvgPicture.asset(
+  Positioned _navigationBar(BuildContext context) {
+    return Positioned(
+      bottom: 0,
+      child: Container(
+        padding: EdgeInsets.only(bottom: 10),
+        color: ColorConstants.WHITE,
+        height: SizeConfig.sizeHeight(context, .09),
+        width: SizeConfig.sizeWidth(context, 1),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            InkWell(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => HomePage()))),
+              child: Padding(
+                padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
+                child:
+                    SvgPicture.asset("assets/images/navigation_bar_home.svg"),
+              ),
+            ),
+            InkWell(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => DashboardPage()))),
+              child: Padding(
+                padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
+                child: SvgPicture.asset(
                   "assets/images/navigation_bar_level_icon.svg",
                   color: ColorConstants.BLUE,
                 ),
-                label: ""),
-          ),
-          Padding(
-            padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-            child: NavigationDestination(
-                icon: SvgPicture.asset(
-                    "assets/images/navigation_bar_time_icon.svg"),
-                label: ""),
-          ),
-          Padding(
-            padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-            child: NavigationDestination(
-                icon: SvgPicture.asset(
-                  "assets/images/navigation_bar_dashboard.svg",
-                  height: 30,
-                  color: ColorConstants.BLUE,
-                ),
-                label: ""),
-          ),
-          Padding(
-            padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
-            child: NavigationDestination(
-                icon: SvgPicture.asset(
-                  "assets/images/navigation_bar_menu.svg",
-                  color: ColorConstants.BLUE,
-                  height: 30,
-                ),
-                label: ""),
-          ),
-        ],
+              ),
+            ),
+            Padding(
+              padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
+              child: SvgPicture.asset(
+                  "assets/images/navigation_bar_time_icon.svg"),
+            ),
+            Padding(
+              padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
+              child: SvgPicture.asset(
+                "assets/images/navigation_bar_dashboard.svg",
+                height: 30,
+                color: ColorConstants.BLUE,
+              ),
+            ),
+            Padding(
+              padding: PaddingConstants.NAVIGATION_BAR_ICON_PADDING,
+              child: SvgPicture.asset(
+                "assets/images/navigation_bar_menu.svg",
+                color: ColorConstants.BLUE,
+                height: 30,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

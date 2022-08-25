@@ -1,4 +1,3 @@
-import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hex_color/flutter_hex_color.dart';
 import 'package:folovmi_app/core/components/animations/easy_in_out.dart';
@@ -44,16 +43,11 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: ColorConstants.WHITE,
       body: SafeArea(
         child: Stack(
           children: [
-            Column(
-              children: [
-                Expanded(flex: 3, child: WhiteContainer()),
-                FolovmiLogo(),
-                const Expanded(flex: 4, child: WhiteContainer()),
-              ],
-            ),
+            _folovmiLogo(context),
             _topCircle(size),
             _bottomBigCircle(size),
             _bottomSmallCircle(size),
@@ -61,6 +55,13 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
         ),
       ),
     );
+  }
+
+  Widget _folovmiLogo(BuildContext context) {
+    return Positioned(
+        left: SizeConfig.sizeWidth(context, .07),
+        top: SizeConfig.sizeHeight(context, 0.15),
+        child: FolovmiLogo());
   }
 
   Positioned _bottomSmallCircle(Size size) {
@@ -98,11 +99,7 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
       ),
     );
   }
-
-
 }
-
-
 
 class _ColorConstants {
   static Color PINK = HexColor("FD7993");

@@ -5,6 +5,7 @@ import 'package:folovmi_app/core/constants/app/app_constants.dart';
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
 import 'package:folovmi_app/core/init/lang/locale_keys.g.dart';
 import 'package:folovmi_app/view/auth/login/view/login_page.dart';
+import 'package:folovmi_app/view/auth/login/view/password_reminder_page.dart';
 import 'package:folovmi_app/view/auth/onboarding/view/first_page.dart';
 import 'package:folovmi_app/view/auth/onboarding/view/welcome_page.dart';
 import 'package:folovmi_app/view/auth/onboarding/widgets/first_page_circle_widget.dart';
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: buildMaterialColor(Color(0xFFF1FBBEB)),
       ),
-      home: DashboardPage(),
+      home: OnboardingFirstPage(),
     );
   }
 

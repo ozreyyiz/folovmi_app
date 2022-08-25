@@ -67,25 +67,19 @@ class _WelcomePageState extends State<WelcomePage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        EasyInOutAnimation(
-          duration: Duration(milliseconds: 1200),
-          child: WelcomePageButton(
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: ((context) => LoginPage()))),
-            textColor: ColorConstants.WHITE,
-            color: _ColorsConstants.LOGIN_BLUE,
-            text: LocaleKeys.signUp_logIn,
-          ),
+        WelcomePageButton(
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: ((context) => LoginPage()))),
+          textColor: ColorConstants.WHITE,
+          color: _ColorsConstants.LOGIN_BLUE,
+          text: LocaleKeys.signUp_logIn,
         ),
-        EasyInOutAnimation(
-          duration: Duration(milliseconds: 1800),
-          child: WelcomePageButton(
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => TermsofUserPage()))),
-              color: ColorConstants.WHITE,
-              text: LocaleKeys.signUp_signUp,
-              textColor: _ColorsConstants.LOGIN_BLUE),
-        )
+        WelcomePageButton(
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => TermsofUserPage()))),
+            color: ColorConstants.WHITE,
+            text: LocaleKeys.signUp_signUp,
+            textColor: _ColorsConstants.LOGIN_BLUE)
       ],
     );
   }

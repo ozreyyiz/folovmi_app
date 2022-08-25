@@ -54,7 +54,9 @@
        "forgotPassword": "Parolanızı mı unuttunuz?",
        "passwordReminder": "Şifre hatırlatıcı",
        "yourPassword": "Şifreniz, gönderildi",
-       "checkMail": "Lütfen emailinizi kontrol edin"
+       "checkMail": "Lütfen emailinizi kontrol edin",
+       "alredyUser":"Zaten bir kullanıcı mı?",
+       "Login":"GİRİŞ YAP"
    },
    "register": {
        "register": "Kayıt ol",

@@ -7,7 +7,6 @@ import 'package:folovmi_app/core/components/text/texty.dart';
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
 import 'package:folovmi_app/core/constants/padding/padding_constants.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
-import '../../../../core/components/container/colorful_container.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
 import '../widgets/sign_up_big_button.dart';
 
@@ -22,6 +21,7 @@ class _PasswordReminderPageState extends BaseState<PasswordReminderPage> {
   @override
   Widget build(BuildContext context) {
     return BaseView(
+      isNavigationBar: false,
         isShort: false,
         title: LocaleKeys.signUp_passwordReminder,
         viewModel: "",
@@ -31,12 +31,9 @@ class _PasswordReminderPageState extends BaseState<PasswordReminderPage> {
               children: [
                 Expanded(
                   flex: 4,
-                  child: DecelerateAnimation(
-                    duration: Duration(milliseconds: 600),
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Image.asset("assets/images/Image 2.png"),
-                    ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Image.asset("assets/images/password_background.png"),
                   ),
                 ),
                 Expanded(
