@@ -15,7 +15,6 @@ import '../../../../core/constants/color/color_constants.dart';
 import '../../../../core/constants/padding/padding_constants.dart';
 import '../../../../core/constants/size/size_config.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
-import '../../../default/view/default_page.dart';
 import '../widgets/sign_up_big_button.dart';
 import '../widgets/sign_up_input_box.dart';
 

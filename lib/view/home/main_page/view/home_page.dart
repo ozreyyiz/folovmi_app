@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
-import 'package:folovmi_app/view/default/view/default_page.dart';
 import 'package:folovmi_app/view/home/main_page/service/smart_devices_list.dart';
 import 'package:folovmi_app/view/home/main_page/widgets/weather_box.dart';
 import 'package:folovmi_app/view/home/smart_devices/model/smart_device_model.dart';

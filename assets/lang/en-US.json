@@ -191,7 +191,19 @@
         "pm2_5":"PM 2.5",
         "outside":"Outside",
         "inside":"Inside"
+       },
+
+       "dashboard":{
+        "dashboard":"Dashboard",
+        "temperature":"Temperature",
+        "humidty":"Humidity",
+        "pm2_5":"PM 2.5",
+        "home":"Home",
+        "light":"Light",
+        "co2":"CO2",
+        "pm10":"PM10"
        }
+
 
 
 

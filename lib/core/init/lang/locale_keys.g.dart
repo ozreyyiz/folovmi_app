@@ -172,5 +172,14 @@ abstract class  LocaleKeys {
   static const weather_outside = 'weather.outside';
   static const weather_inside = 'weather.inside';
   static const weather = 'weather';
+  static const dashboard_dashboard = 'dashboard.dashboard';
+  static const dashboard_temperature = 'dashboard.temperature';
+  static const dashboard_humidty = 'dashboard.humidty';
+  static const dashboard_pm2_5 = 'dashboard.pm2_5';
+  static const dashboard_home = 'dashboard.home';
+  static const dashboard_light = 'dashboard.light';
+  static const dashboard_co2 = 'dashboard.co2';
+  static const dashboard_pm10 = 'dashboard.pm10';
+  static const dashboard = 'dashboard';
 
 }

@@ -8,7 +8,6 @@ import 'package:folovmi_app/core/constants/border_radius/border_radius_constants
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
 import 'package:folovmi_app/core/constants/padding/padding_constants.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
-import 'package:folovmi_app/view/default/view/default_page.dart';
 
 import '../../../../../../core/init/lang/locale_keys.g.dart';
 import 'ekg_page.dart';

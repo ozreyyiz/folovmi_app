@@ -190,6 +190,17 @@
     "pm2_5":"PM 2.5",
     "outside":"Dışarıda",
     "inside":"İçeri"
+   },
+
+   "dashboard":{
+    "dashboard":"Gösterge Paneli",
+    "temperature":"Sıcaklık",
+    "humidty":"Nem",
+    "pm2_5":"PM 2.5",
+    "home":"Ev",
+    "light":"Işık",
+    "co2":"CO2",
+    "pm10":"PM10"
    }
 
 

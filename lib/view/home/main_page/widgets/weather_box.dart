@@ -89,16 +89,8 @@ class _WeatherBoxState extends State<WeatherBox> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             SizedBox(height: 16),
-                            Texty(
-                              text: LocaleKeys.weather_inside,
-                              fontSize: 16,
-                              color: ColorConstants.BLUE_FONT,
-                            ),
-                            Texty(
-                              text: LocaleKeys.weather_outside,
-                              fontSize: 16,
-                              color: ColorConstants.BLUE_FONT,
-                            ),
+                            _text(LocaleKeys.weather_inside),
+                            _text(LocaleKeys.weather_outside),
                           ],
                         ),
                       ),
@@ -184,16 +176,18 @@ class _WeatherBoxState extends State<WeatherBox> {
     );
   }
 
-  Row _text(String text) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Texty(
-          text: text,
-          fontSize: 16,
-          color: ColorConstants.BLUE_FONT,
-        ),
-      ],
+  Widget _text(String text) {
+    return Container(width: SizeConfig.sizeWidth(context, .20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Texty(
+            text: text,
+            fontSize: 15,
+            color: ColorConstants.BLUE_FONT,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -7,9 +7,6 @@ import 'package:folovmi_app/core/components/text/texty.dart';
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
 import 'package:folovmi_app/core/constants/padding/padding_constants.dart';
 import 'package:folovmi_app/core/init/extension/string_extension.dart';
-
-import 'package:folovmi_app/view/default/view/default_page.dart';
-
 import '../../../../core/components/container/colorful_container.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
 import '../widgets/sign_up_big_button.dart';

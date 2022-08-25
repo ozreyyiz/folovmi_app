@@ -18,7 +18,7 @@ class Texty extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoSizeText(
       text.locale,
-      // overflow: TextOverflow.ellipsis,
+      overflow: TextOverflow.clip,
       style: GoogleFonts.roboto(
         fontSize: fontSize,
         color: color,

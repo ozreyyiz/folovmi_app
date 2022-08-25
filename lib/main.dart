@@ -19,6 +19,7 @@ import 'package:folovmi_app/view/home/settings/wifi_settings/view/wifi_connectio
 import 'package:folovmi_app/view/home/settings/wifi_settings/view/wifi_networks_page.dart';
 import 'package:folovmi_app/view/home/smart_devices/blood_temperature/blood_pressure_first.dart';
 import 'package:folovmi_app/view/home/smart_devices/body_temperature/body_temperature_second.dart';
+import 'package:folovmi_app/view/home/smart_devices/dashboard/view/dashboard_page.dart';
 import 'package:folovmi_app/view/home/smart_devices/smart_devices/view/smart_devices_page.dart';
 
 void main() async {
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: buildMaterialColor(Color(0xFFF1FBBEB)),
       ),
-      home: HomePage(),
+      home: DashboardPage(),
     );
   }
 
