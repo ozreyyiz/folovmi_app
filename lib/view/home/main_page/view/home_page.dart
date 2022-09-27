@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
+import 'package:folovmi_app/view/auth/login/model/login_model.dart';
+import 'package:folovmi_app/view/auth/register/model/sign_up_model.dart';
+import 'package:folovmi_app/view/auth/register/riverpod/sign_up_riverpod.dart';
 import 'package:folovmi_app/view/home/main_page/service/smart_devices_list.dart';
 import 'package:folovmi_app/view/home/main_page/widgets/weather_box.dart';
 import 'package:folovmi_app/view/home/smart_devices/model/smart_device_model.dart';
 import 'package:folovmi_app/view/home/smart_devices/smart_devices/view/smart_devices_page.dart';
+import 'package:folovmi_app/view/riverpod/riverpod_management.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../../../core/base/view/base_view.dart';
 import '../../../../core/components/box/width_box.dart';
@@ -14,6 +18,7 @@ import '../../../../core/components/text/texty.dart';
 import '../../../../core/constants/border_radius/border_radius_constants.dart';
 import '../../../../core/constants/color/color_constants.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
+import '../../../auth/login/model/riverpod/login_riverpod.dart';
 import '../widgets/device_box.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -27,11 +32,18 @@ class _HomePageState extends ConsumerState<HomePage> {
   @override
   final box = GetStorage();
   Widget build(BuildContext context) {
+
+
+    
+
+
+
     return BaseView(
       viewModel: "",
       title: LocaleKeys.register_register,
       isShort: true,
       isMain: true,
+      isTurnBackIcon: false,
       onDispose: () {},
       onModelReady: (model) {},
       appBar: _appBar(),
@@ -80,13 +92,17 @@ class _HomePageState extends ConsumerState<HomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // Image.asset("assets/images/Group 916.png"),
-             SvgPicture.asset("assets/images/camera.svg"),
+          GestureDetector(
+              onTap: () {
+                box.erase();
+                print("deleted");
+              },
+              child: SvgPicture.asset("assets/images/camera.svg")),
           Texty(text: "folovmi Technology", fontSize: 15, color: Colors.white),
           Row(
             children: [
-              GestureDetector(onTap: (){
-                box.erase();
-              },child: SvgPicture.asset("assets/images/a.svg")),
+              GestureDetector(
+                  onTap: () {}, child: SvgPicture.asset("assets/images/a.svg")),
               GestureDetector(
                   onTap: (() => Navigator.push(
                         context,
@@ -147,6 +163,4 @@ class _HomePageState extends ConsumerState<HomePage> {
   }
 
   a() {}
- 
-
 }

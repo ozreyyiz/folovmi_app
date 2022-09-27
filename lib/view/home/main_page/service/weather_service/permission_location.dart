@@ -10,7 +10,7 @@ class GeolocatorService {
         return Future.error('Location Not Available');
       }
     } else {
-      throw Exception('Error');
+      // throw Exception('Error');
     }
     return await Geolocator.getCurrentPosition();
   }

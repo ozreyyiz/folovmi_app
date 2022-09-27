@@ -1,7 +1,7 @@
 class LoginModel{
   String? token;
   int? statusCode;
-  dynamic? body;
+  dynamic body;
 
 LoginModel({this.body,this.statusCode,this.token,});
 

@@ -27,8 +27,9 @@ class _OnboardingFirstPageState extends State<OnboardingFirstPage> {
   @override
   void initState() {
     super.initState();
-    box.erase();
+    // box.erase();
     Future.delayed(Duration(seconds: 3), () {
+      // print(box.read("token"));
       if (box.read("token") != null) {
         Navigator.push(
             context, MaterialPageRoute(builder: ((context) => HomePage())));

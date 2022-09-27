@@ -6,6 +6,7 @@ import 'package:folovmi_app/core/constants/border_radius/border_radius_constants
 import 'package:folovmi_app/core/constants/color/color_constants.dart';
 import 'package:folovmi_app/core/constants/padding/padding_constants.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
+import 'package:folovmi_app/view/home/main_page/service/user_data_service.dart';
 import 'package:folovmi_app/view/home/main_page/view/home_page.dart';
 import 'package:folovmi_app/view/home/smart_devices/dashboard/view/dashboard_page.dart';
 
@@ -20,6 +21,7 @@ class BaseView<T> extends StatefulWidget {
   final bool sign;
   final bool isMain;
   final bool isNavigationBar;
+  final bool isTurnBackIcon;
 
   const BaseView({
     super.key,
@@ -33,6 +35,7 @@ class BaseView<T> extends StatefulWidget {
     this.appBar = const Center(),
     this.isMain = false,
     this.isNavigationBar = true,
+    this.isTurnBackIcon = true,
   });
 
   @override
@@ -51,6 +54,7 @@ class _BaseViewState extends BaseState<BaseView> {
   @override
   void initState() {
     super.initState();
+    UserData().getData();
     if (widget.onModelReady != null) widget.onModelReady(widget.viewModel);
   }
 
@@ -71,7 +75,7 @@ class _BaseViewState extends BaseState<BaseView> {
             Stack(
               children: [
                 _appBar(),
-                _turnBackIcon(),
+                widget.isTurnBackIcon ? _turnBackIcon() : SizedBox(),
                 widget.isShort ? _bodyShort(context) : _bodyLong(context),
                 widget.sign ? _signInUpdate() : const Center(),
                 widget.isNavigationBar ? _navigationBar(context) : SizedBox(),

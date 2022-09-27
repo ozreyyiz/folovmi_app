@@ -90,8 +90,8 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
       duration: Duration(milliseconds: 1200),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => LoginPage()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginPage()));
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -199,6 +199,8 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                 .showSnackBar(SnackBar(content: Text("data")));
           } else {
             ref.read(signUpRiverpod).fetch(context);
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => LoginPage()));
           }
         },
         text: LocaleKeys.signUp_signUp,

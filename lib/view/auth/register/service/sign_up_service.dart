@@ -70,6 +70,12 @@ class SignUpService {
           response.statusCode == 203 ||
           response.statusCode == 204) {
         print("success $response");
+     
+       SignUpModel model=SignUpModel.fromJson(response.data);
+       print(model.userId);
+       
+
+        
         ref.read(signUpRiverpod).email.clear();
         ref.read(signUpRiverpod).password.clear();
         return response;

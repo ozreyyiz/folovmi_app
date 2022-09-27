@@ -13,10 +13,10 @@ class WeatherService {
 
     var response = await _dio.get(api);
     var body = response.data;
-    print(Weather.fromJson(body).cityName);
-    print(Weather.fromJson(body).humidity);
+    // print(Weather.fromJson(body).cityName);
+    // print(Weather.fromJson(body).humidity);
 
-    print("olay");
+    // print("hava");
 
     return Weather.fromJson(body);
   }

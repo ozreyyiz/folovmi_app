@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       locale: context.locale,
       supportedLocales: context.supportedLocales,
