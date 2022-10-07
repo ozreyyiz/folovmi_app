@@ -4,4 +4,3 @@ import 'package:folovmi_app/view/auth/register/riverpod/sign_up_riverpod.dart';
 
 final loginRiverpod = ChangeNotifierProvider((_) => LoginRiverpod());
 final signUpRiverpod = ChangeNotifierProvider((_) => SignUpRiverpod());
-

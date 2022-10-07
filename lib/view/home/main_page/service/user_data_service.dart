@@ -3,19 +3,19 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:folovmi_app/view/auth/login/model/riverpod/login_riverpod.dart';
+import 'package:folovmi_app/view/home/main_page/model/user_model.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../../riverpod/riverpod_management.dart';
 
 final box = GetStorage();
 
-class UserData {
+class UserDataService {
   final String baseUrl = "https://api.folovmi.com/lfsvr/rest/api/user/mail/";
   final dio = Dio();
 
   static String mail = box.read("email").toString();
   static String token = box.read("token").toString();
-
 
   static Map<String, dynamic> getHeaders() {
     var map = {
@@ -36,7 +36,7 @@ class UserData {
         headers: getHeaders());
   }
 
-  Future<Response> getData() async {
+  Future<UserModel> getData() async {
     try {
       var response = await dio.get(baseUrl + mail, options: getOptions());
 
@@ -46,10 +46,10 @@ class UserData {
           response.statusCode == 203 ||
           response.statusCode == 204) {
         // print('OUTPUT DATA : ${response.data["token"]}');
-        print('INPUT DATA $response');
+        print(response.data["userId"]);
         print("USER DATA SERVİCE");
 
-        return response;
+        return UserModel.fromJson(response.data);
       } else {
         throw Exception(response.statusCode);
       }

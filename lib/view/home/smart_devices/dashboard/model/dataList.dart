@@ -2,6 +2,7 @@ import 'package:folovmi_app/core/init/lang/locale_keys.g.dart';
 import 'package:folovmi_app/view/home/smart_devices/dashboard/model/dashboard_data_model.dart';
 String path="assets/images/";
 class DashboardDatas {
+  
   List datas = [
 
 DashboardData(header: LocaleKeys.dashboard_temperature,text: "30.50 C", iconPath: "assets/images/temp_icon.svg"),

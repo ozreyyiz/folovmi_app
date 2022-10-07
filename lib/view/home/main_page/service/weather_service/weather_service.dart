@@ -16,7 +16,7 @@ class WeatherService {
     // print(Weather.fromJson(body).cityName);
     // print(Weather.fromJson(body).humidity);
 
-    // print("hava");
+  
 
     return Weather.fromJson(body);
   }

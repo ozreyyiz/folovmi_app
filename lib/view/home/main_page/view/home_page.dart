@@ -3,10 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:folovmi_app/core/constants/size/size_config.dart';
 import 'package:folovmi_app/view/auth/login/model/login_model.dart';
+import 'package:folovmi_app/view/auth/onboarding/view/welcome_page.dart';
 import 'package:folovmi_app/view/auth/register/model/sign_up_model.dart';
 import 'package:folovmi_app/view/auth/register/riverpod/sign_up_riverpod.dart';
+import 'package:folovmi_app/view/home/main_page/model/user_model.dart';
 import 'package:folovmi_app/view/home/main_page/service/smart_devices_list.dart';
+import 'package:folovmi_app/view/home/main_page/service/user_data_service.dart';
 import 'package:folovmi_app/view/home/main_page/widgets/weather_box.dart';
+import 'package:folovmi_app/view/home/smart_devices/dashboard/riverpod/dashboard_service.dart';
 import 'package:folovmi_app/view/home/smart_devices/model/smart_device_model.dart';
 import 'package:folovmi_app/view/home/smart_devices/smart_devices/view/smart_devices_page.dart';
 import 'package:folovmi_app/view/riverpod/riverpod_management.dart';
@@ -30,59 +34,82 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _HomePageState extends ConsumerState<HomePage> {
   @override
+  void initState() {
+    super.initState();
+    getUser();
+  }
+
+  bool isLoading = false;
+  UserModel? user;
+
+  Future getUser() async {
+    isLoading = true;
+    UserModel userModel;
+    try {
+      userModel = await UserDataService().getData();
+      isLoading = false;
+      print(userModel);
+
+      setState(() {
+        user = userModel;
+        box.write("userId", userModel.userId);
+      });
+    } catch (e) {
+      isLoading = false;
+    }
+  }
+
+  @override
   final box = GetStorage();
   Widget build(BuildContext context) {
-
-
-    
-
-
-
-    return BaseView(
-      viewModel: "",
-      title: LocaleKeys.register_register,
-      isShort: true,
-      isMain: true,
-      isTurnBackIcon: false,
-      onDispose: () {},
-      onModelReady: (model) {},
-      appBar: _appBar(),
-      onPageBuilder: (context, value) => Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: WeatherBox(context: context),
-          ),
-          _buttons(),
-          Container(
-            height: SizeConfig.sizeHeight(context, 0.28),
-            decoration: BoxDecoration(
-              color: ColorConstants.BLUE_ICE,
-              borderRadius:
-                  BorderRadiusConstants.BORDER_RADIUS_SHORT_BODY_CONTAINER,
+    return isLoading
+        ? Scaffold(body: Center(child: CircularProgressIndicator()))
+        : BaseView(
+            viewModel: "",
+            title: LocaleKeys.register_register,
+            isShort: true,
+            isMain: true,
+            isTurnBackIcon: false,
+            onDispose: () {},
+            onModelReady: (model) {},
+            appBar: _appBar(),
+            onPageBuilder: (context, value) => Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: WeatherBox(context: context),
+                ),
+                _buttons(),
+                Container(
+                  height: SizeConfig.sizeHeight(context, 0.28),
+                  decoration: BoxDecoration(
+                    color: ColorConstants.BLUE_ICE,
+                    borderRadius: BorderRadiusConstants
+                        .BORDER_RADIUS_SHORT_BODY_CONTAINER,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GridView.builder(
+                      padding: EdgeInsets.all(0),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2, childAspectRatio: 1.8),
+                      itemCount: SmartDevices().smart_devices.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final SmartDeviceModel item =
+                            SmartDevices().smart_devices[index];
+                        return DeviceBox(
+                          iconPath: item.iconPath,
+                          text: item.text,
+                          widget: item.widget,
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ],
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GridView.builder(
-                padding: EdgeInsets.all(0),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, childAspectRatio: 1.8),
-                itemCount: SmartDevices().smart_devices.length,
-                itemBuilder: (BuildContext context, int index) {
-                  final SmartDeviceModel item =
-                      SmartDevices().smart_devices[index];
-                  return DeviceBox(
-                    iconPath: item.iconPath,
-                    text: item.text,
-                    widget: item.widget,
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
+          );
   }
 
   Padding _appBar() {
@@ -95,14 +122,20 @@ class _HomePageState extends ConsumerState<HomePage> {
           GestureDetector(
               onTap: () {
                 box.erase();
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => WelcomePage()));
                 print("deleted");
               },
               child: SvgPicture.asset("assets/images/camera.svg")),
-          Texty(text: "folovmi Technology", fontSize: 15, color: Colors.white),
+          Texty(text: LocaleKeys.welcome_name, fontSize: 15, color: Colors.white),
           Row(
             children: [
               GestureDetector(
-                  onTap: () {}, child: SvgPicture.asset("assets/images/a.svg")),
+                  onTap: () {
+                    print("hekeke");
+                    print(box.read("userId"));
+                  },
+                  child: SvgPicture.asset("assets/images/a.svg")),
               GestureDetector(
                   onTap: (() => Navigator.push(
                         context,

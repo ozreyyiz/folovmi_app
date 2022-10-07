@@ -54,7 +54,7 @@ class _BaseViewState extends BaseState<BaseView> {
   @override
   void initState() {
     super.initState();
-    UserData().getData();
+    UserDataService().getData();
     if (widget.onModelReady != null) widget.onModelReady(widget.viewModel);
   }
 
